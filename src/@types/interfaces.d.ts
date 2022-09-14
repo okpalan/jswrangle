@@ -63,14 +63,18 @@ declare enum TokenDelimiter {
 declare enum TokenEOF {
     EOF = 'EOF'
 }
-declare enum TokenData {
+
+declare enum TokenCharData {
     TAB = '\t',
     NEWLINE = '\n',
     CARRIAGE_RETURN = '\r',
 }
-declare enum TokenBinOperator {
+
+
+declare enum TokenBinaryOperator {
 
 }
+
 declare enum TokenExtra {
     SHEBANG = '#!',
     COMMENT = '//',

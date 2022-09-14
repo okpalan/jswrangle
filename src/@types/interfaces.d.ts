@@ -1,8 +1,6 @@
-// treat this file as a module.
-export { }
 
-declare type Token = string | number;
-declare type TokenList = Token[];
+export declare type Token = string | number;
+export declare type TokenList = Token[];
 
 declare enum TokenKeyword {
     VAR = 'var',
@@ -40,7 +38,17 @@ declare enum TokenOperator {
     GT = '>',
     EQ = '==',
     NOT_EQ = '!=',
-    ASSIGN = '='
+    ASSIGN = '=',
+    MODULO = '%',
+    PLUS_EQUAL= '+=',
+    MINUS_EQUAL = '-=',
+    ASTERISK_EQUAL = '*=',
+    SLASH_EQUAL = '/=',
+    LT_EQUAL = '<=',
+    GT_EQUAL = '>=',
+    DEEP_STRICT_EQUAL = '===',
+    NOT_EQUAL = '!==',
+    MODULO_EQUAL = '%='
 }
 declare enum TokenDelimiter {
     COMMA = ',',
@@ -55,11 +63,17 @@ declare enum TokenDelimiter {
 declare enum TokenEOF {
     EOF = 'EOF'
 }
+declare enum TokenData {
+    TAB = '\t',
+    NEWLINE = '\n',
+    CARRIAGE_RETURN = '\r',
+}
+declare enum TokenBinOperator {
 
-declare enum TokenETC {
+}
+declare enum TokenExtra {
     SHEBANG = '#!',
     COMMENT = '//',
-    IDENT = '\t',
     COMMENT_START = '/*',
     COMMENT_END = '*/',
 }
@@ -85,9 +99,20 @@ declare interface ITokenResult {
     value: Token;
     done: boolean;
 }
+declare interface ILexerChecker {
+    isWhiteSpace(c: string): boolean;
+    isDigit(c: string): boolean;
+    isChar(c: string): boolean;
+
+    isKeyword(c: string): boolean;
+    isOperator(c: string): boolean;
+    isDelimiter(c: string): boolean;
+    isETC(c: string): boolean;
+}
 
 declare interface ILexer extends ITokenIterable, ITokenIterator {
     token: Token;
+    tokens: TokenList;
     shift(): Token;
     peek(): Token;
     isEmpty(): boolean;

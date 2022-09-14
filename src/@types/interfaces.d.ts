@@ -1,8 +1,16 @@
+// treat as a module
+export { };
+export as namespace Lexer;
+declare type Token = {
+    type: string;
+    value: string;
+    line: number;
+    col: number;
+};
 
-export declare type Token = string | number;
-export declare type TokenList = Token[];
+declare type TokenList = Token[];
 
-declare enum TokenKeyword {
+export declare enum TokenKeyword {
     VAR = 'var',
     LET = 'let',
     CONST = 'const',
@@ -35,7 +43,7 @@ declare enum TokenKeyword {
     GENERATOR_FUNCTION = 'function*',
 
 }
-declare enum TokenOperator {
+export declare enum TokenOperator {
     PLUS = '+',
     MINUS = '-',
     ASTERISK = '*',
@@ -59,7 +67,7 @@ declare enum TokenOperator {
     DECREMENT = '--',
 }
 // Splitters.
-declare enum TokenDelimiter {
+export declare enum TokenDelimiter {
     COMMA = ',',
     SEMICOLON = ';',
     LPAREN = '(',
@@ -70,77 +78,75 @@ declare enum TokenDelimiter {
     RBRACKET = ']',
     DOT = '.'
 }
-declare enum TokenEOF {
+export declare enum TokenEOF {
     EOF = 'EOF'
 }
 
-declare enum TokenCharData {
+export declare enum TokenCharData {
     TAB = '\t',
     NEWLINE = '\n',
     CARRIAGE_RETURN = '\r',
 }
 
 
-declare enum TokenBinaryOperator {
+export declare enum TokenBinaryOperator {
     AMPERSAND = '&',
     BITWISE = '|',
     LSHIFT = '<<',
     RSHIFT = '>>',
     U_RSHIFT = '>>>',
-    
+
 }
 
-declare enum TokenExtra {
+export declare enum TokenExtra {
     SHEBANG = '#!',
     COMMENT = '//',
     COMMENT_START = '/*',
     COMMENT_END = '*/',
 }
 
-declare enum TokenType {
+export declare enum TokenType {
     Keyword = 'TokenKeyword',
     Operator = 'TokenOperator',
     Delimiter = 'TokenDelimiter',
-    ETC = 'TokenETC',
+    Extra = 'TokenExtra',
     EOF = 'TokenEOF'
 }
 
-declare interface ITokenIterable {
+export declare interface ILexerChecker {
+    isIdenitifer(c:string):boolean;
+    isKeyword(c:string): boolean;
+
+    isEOF(c:string):   boolean;
+ }
+ 
+export declare interface ITokenIterable {
     [Symbol.iterator](): ITokenIterator;
     [index: number]: Token;
 }
 
-declare interface ITokenIterator {
+export declare interface ITokenIterator {
     next(): ITokenResult;
 }
 
-declare interface ITokenResult {
+export declare interface ITokenResult {
     value: Token;
     done: boolean;
 }
-declare interface ILexerChecker {
-    isWhiteSpace(c: string): boolean;
-    isDigit(c: string): boolean;
-    isChar(c: string): boolean;
 
-    isKeyword(c: string): boolean;
-    isOperator(c: string): boolean;
-    isDelimiter(c: string): boolean;
-    isETC(c: string): boolean;
-}
-
-declare interface ILexer extends ITokenIterable, ITokenIterator {
+export declare interface ILexer extends ITokenIterable, ITokenIterator {
     token: Token;
+    Checker: ILexerChecker;
     tokens: TokenList;
     shift(): Token;
     peek(): Token;
     isEmpty(): boolean;
 }
 
-declare interface ILexerConstructor {
+export declare interface ILexerConstructor {
     constructor(rules: TokenList): ILexer;
     new(rules: TokenList): ILexer;
     prototype: ILexer;
 }
 
-declare var Lexer: ILexerConstructor;
+export declare var Lexer: ILexerConstructor;

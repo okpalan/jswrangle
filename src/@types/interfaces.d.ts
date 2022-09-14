@@ -56,6 +56,7 @@ declare enum TokenOperator {
     NOT_EQUAL = '!==',
     MODULO_EQUAL = '%='
 }
+// Splitters.
 declare enum TokenDelimiter {
     COMMA = ',',
     SEMICOLON = ';',
@@ -64,7 +65,8 @@ declare enum TokenDelimiter {
     LBRACE = '{',
     RBRACE = '}',
     LBRACKET = '[',
-    RBRACKET = ']'
+    RBRACKET = ']',
+    DOT='.'
 }
 declare enum TokenEOF {
     EOF = 'EOF'
@@ -78,7 +80,11 @@ declare enum TokenCharData {
 
 
 declare enum TokenBinaryOperator {
-
+    AMPERSAND='&',
+    BITWISE= '|',
+    LSHIFT='<<',
+    RSHIFT='>>',
+    U_RSHIFT='>>>',
 }
 
 declare enum TokenExtra {

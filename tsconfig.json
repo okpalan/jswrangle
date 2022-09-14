@@ -10,7 +10,7 @@
         "typeRoots": ["src/@types", "node_modules/@types"],
         "baseUrl": "src",
         "paths": {
-            "@/*": ["*"] // matching @src/* to src/*
+            "*": ["*"] // this is the important part
         },
         "outDir": "dist",
         "experimentalDecorators": true,

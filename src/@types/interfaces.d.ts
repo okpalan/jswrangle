@@ -1,6 +1,6 @@
 // treat as a module
 export { };
-export as namespace Lexer;
+export as namespace Lex;
 declare type Token = {
     type: string;
     value: string;
@@ -95,7 +95,6 @@ export declare enum TokenBinaryOperator {
     LSHIFT = '<<',
     RSHIFT = '>>',
     U_RSHIFT = '>>>',
-
 }
 
 export declare enum TokenExtra {
@@ -107,19 +106,20 @@ export declare enum TokenExtra {
 
 export declare enum TokenType {
     Keyword = 'TokenKeyword',
+    Identifier = 'TokenIdentifier',
     Operator = 'TokenOperator',
     Delimiter = 'TokenDelimiter',
-    Extra = 'TokenExtra',
     EOF = 'TokenEOF'
 }
 
 export declare interface ILexerChecker {
-    isIdenitifer(c:string):boolean;
-    isKeyword(c:string): boolean;
+    isIdentifer(c: string): boolean;
+    isKeyword(c: string): boolean;
+    isOperator(c: string): boolean;
+    isDelimiter(c: string): boolean;
+    isEOF(c: string): boolean;
+}
 
-    isEOF(c:string):   boolean;
- }
- 
 export declare interface ITokenIterable {
     [Symbol.iterator](): ITokenIterator;
     [index: number]: Token;

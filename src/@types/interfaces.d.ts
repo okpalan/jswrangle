@@ -28,11 +28,11 @@ declare enum TokenKeyword {
     THIS = 'this',
     WHILE = 'while',
     WITH = 'with',
-    ASYNC='async',
-    AWAIT='await',
+    ASYNC = 'async',
+    AWAIT = 'await',
     YIELD = 'yield',
     YIELD_STAR = 'yield*',
-    GENERATOR_FUNCTION='function*',
+    GENERATOR_FUNCTION = 'function*',
 
 }
 declare enum TokenOperator {
@@ -46,7 +46,7 @@ declare enum TokenOperator {
     NOT_EQ = '!=',
     ASSIGN = '=',
     MODULO = '%',
-    PLUS_EQUAL= '+=',
+    PLUS_EQUAL = '+=',
     MINUS_EQUAL = '-=',
     ASTERISK_EQUAL = '*=',
     SLASH_EQUAL = '/=',
@@ -54,7 +54,9 @@ declare enum TokenOperator {
     GT_EQUAL = '>=',
     DEEP_STRICT_EQUAL = '===',
     NOT_EQUAL = '!==',
-    MODULO_EQUAL = '%='
+    MODULO_EQUAL = '%=',
+    INCREMENT = '++',
+    DECREMENT = '--',
 }
 // Splitters.
 declare enum TokenDelimiter {
@@ -66,7 +68,7 @@ declare enum TokenDelimiter {
     RBRACE = '}',
     LBRACKET = '[',
     RBRACKET = ']',
-    DOT='.'
+    DOT = '.'
 }
 declare enum TokenEOF {
     EOF = 'EOF'
@@ -80,11 +82,12 @@ declare enum TokenCharData {
 
 
 declare enum TokenBinaryOperator {
-    AMPERSAND='&',
-    BITWISE= '|',
-    LSHIFT='<<',
-    RSHIFT='>>',
-    U_RSHIFT='>>>',
+    AMPERSAND = '&',
+    BITWISE = '|',
+    LSHIFT = '<<',
+    RSHIFT = '>>',
+    U_RSHIFT = '>>>',
+    
 }
 
 declare enum TokenExtra {

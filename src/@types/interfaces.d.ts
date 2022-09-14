@@ -88,7 +88,7 @@ declare interface ITokenResult {
 
 declare interface ILexer extends ITokenIterable, ITokenIterator {
     token: Token;
-    pop(): Token;
+    shift(): Token;
     peek(): Token;
     isEmpty(): boolean;
 }

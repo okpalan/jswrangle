@@ -27,7 +27,13 @@ declare enum TokenKeyword {
     NEW = 'new',
     THIS = 'this',
     WHILE = 'while',
-    WITH = 'with'
+    WITH = 'with',
+    ASYNC='async',
+    AWAIT='await',
+    YIELD = 'yield',
+    YIELD_STAR = 'yield*',
+    GENERATOR_FUNCTION='function*',
+
 }
 declare enum TokenOperator {
     PLUS = '+',

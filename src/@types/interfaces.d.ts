@@ -11,7 +11,7 @@ declare enum TokenKeyword {
     FALSE = 'false',
     IF = 'if',
     ELSE = 'else',
-    RETURN = 'return'
+    RETURN = 'return',
 }
 declare enum TokenOperator {
     PLUS = '+',
@@ -42,6 +42,8 @@ declare enum TokenETC {
     SHEBANG = '#!',
     COMMENT = '//',
     IDENT = '\t',
+    COMMENT_START= '/*',
+    COMMENT_END= '*/',
 }
 
 declare enum TokenType {

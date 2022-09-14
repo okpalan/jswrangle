@@ -1,4 +1,2 @@
-/// <reference path="../@types/interfaces.d.ts"/>
+/// <reference path="../@types/interfaces/token.d.ts"/>
 
-class LexerChecker implements Lex.ILexerChecker {
-    public static is

@@ -1,2 +1,2 @@
-/// <reference path="../@types/interfaces.d.ts"/>
+/// <reference path="../@types/interfaces/token.d.ts"/>
 

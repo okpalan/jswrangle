@@ -1,0 +1,30 @@
+{
+  "name": "jshrink",
+  "version": "0.1.0",
+  "description": "A JavaScript Minifer and Obfuscator",
+  "main": "dist/jshrink.js",
+  "scripts": {
+    "test": "mocha",
+    "build":"tsc -p .",
+    "build:watch":"tsc -p . -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okpalan/jshrink.git"
+  },
+  "keywords": [
+    "jshrink",
+    "minifer",
+    "compressor",
+    "obfuscator"
+  ],
+  "author": "Nnamdi Michael Okpala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okpalan/jshrink/issues"
+  },
+  "homepage": "https://github.com/okpalan/jshrink#readme",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
+}

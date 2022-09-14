@@ -1,0 +1,21 @@
+{
+
+    "compilerOptions": {
+        "target": "es5",
+        "allowJs": true,
+        "checkJs": false,
+        "lib": ["es2015"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "typeRoots": ["src/@types", "node_modules/@types"],
+        "baseUrl": "src",
+        "paths": {
+            "@/*": ["*"] // matching @src/* to src/*
+        },
+        "outDir": "dist",
+        "experimentalDecorators": true,
+        "removeComments": true
+    },
+    "exclude": ["node_modules", "dist"],
+    "include": ["src/**/*","src/*"]
+}

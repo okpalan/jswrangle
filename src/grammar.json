@@ -1,0 +1,335 @@
+{
+    "reserved": [
+        {
+            "hoisted": true,
+            "name": "break"
+        },
+        {
+            "hoisted": true,
+            "name": "case"
+        },
+        {
+            "hoisted": true,
+            "name": "catch"
+        },
+        {
+            "hoisted": true,
+            "name": "continue"
+        },
+        {
+            "hoisted": true,
+            "name": "debugger"
+        },
+        {
+            "hoisted": true,
+            "name": "default"
+        },
+        {
+            "hoisted": true,
+            "name": "delete"
+        },
+        {
+            "hoisted": true,
+            "name": "do"
+        },
+        {
+            "hoisted": true,
+            "name": "else"
+        },
+        {
+            "hoisted": true,
+            "name": "finally"
+        },
+        {
+            "hoisted": true,
+            "name": "for"
+        },
+        {
+            "hoisted": true,
+            "name": "function"
+        },
+        {
+            "hoisted": true,
+            "name": "if"
+        },
+        {
+            "hoisted": true,
+            "name": "in"
+        },
+        {
+            "hoisted": true,
+            "name": "instanceof"
+        },
+        {
+            "hoisted": true,
+            "name": "new"
+        },
+        {
+            "hoisted": true,
+            "name": "return"
+        },
+        {
+            "hoisted": true,
+            "name": "switch"
+        },
+        {
+            "hoisted": true,
+            "name": "this"
+        },
+        {
+            "hoisted": true,
+            "name": "throw"
+        },
+        {
+            "hoisted": true,
+            "name": "try"
+        },
+        {
+            "hoisted": true,
+            "name": "typeof"
+        },
+        {
+            "hoisted": true,
+            "name": "var"
+        },
+        {
+            "hoisted": true,
+            "name": "void"
+        },
+        {
+            "hoisted": true,
+            "name": "while"
+        },
+        {
+            "hoisted": true,
+            "name": "with"
+        }
+    ],
+    "tokens": [
+        {
+            "name": ";",
+            "precedence": 0
+        },
+        {
+            "name": ",",
+            "precedence": 0
+        },
+        {
+            "name": "(",
+            "precedence": 0
+        },
+        {
+            "name": ")",
+            "precedence": 0
+        },
+        {
+            "name": "{",
+            "precedence": 0
+        },
+        {
+            "name": "}",
+            "precedence": 0
+        },
+        {
+            "name": "[",
+            "precedence": 0
+        },
+        {
+            "name": "]",
+            "precedence": 0
+        },
+        {
+            "name": ".",
+            "precedence": 0
+        },
+        {
+            "name": "!",
+            "precedence": 0
+        },
+        {
+            "name": "~",
+            "precedence": 0
+        },
+        {
+            "name": "?",
+            "precedence": 0
+        },
+        {
+            "name": ":",
+            "precedence": 0
+        },
+        {
+            "name": "&",
+            "precedence": 1
+        },
+        {
+            "name": "^",
+            "precedence": 2
+        },
+        {
+            "name": "|",
+            "precedence": 2
+        },
+        {
+            "name": "*",
+            "precedence": 3
+        },
+        {
+            "name": "/",
+            "precedence": 3
+        },
+        {
+            "name": "%",
+            "precedence": 3
+        },
+        {
+            "name": "+",
+            "precedence": 4
+        },
+        {
+            "name": "-",
+            "precedence": 4
+        },
+        {
+            "name": "<<",
+            "precedence": 5
+        },
+        {
+            "name": ">>",
+            "precedence": 5
+        },
+        {
+            "name": ">>>",
+            "precedence": 5
+        },
+        {
+            "name": "<",
+            "precedence": 6
+        },
+        {
+            "name": ">",
+            "precedence": 6
+        },
+        {
+            "name": "<=",
+            "precedence": 6
+        },
+        {
+            "name": ">=",
+            "precedence": 6
+        },
+        {
+            "name": "==",
+            "precedence": 7
+        },
+        {
+            "name": "===",
+            "precedence": 7
+        },
+        {
+            "name": "!=",
+            "precedence": 7
+        },
+        {
+            "name": "!==",
+            "precedence": 7
+        },
+        {
+            "name": "=",
+            "precedence": 8
+        },
+        {
+            "name": "+=",
+            "precedence": 8
+        },
+        {
+            "name": "-=",
+            "precedence": 8
+        },
+        {
+            "name": "*=",
+            "precedence": 8
+        },
+        {
+            "name": "/=",
+            "precedence": 8
+        },
+        {
+            "name": "%=",
+            "precedence": 8
+        },
+        {
+            "name": "<<=",
+            "precedence": 8
+        },
+        {
+            "name": ">>=",
+            "precedence": 8
+        },
+        {
+            "name": ">>>=",
+            "precedence": 8
+        },
+        {
+            "name": "&=",
+            "precedence": 8
+        },
+        {
+            "name": "|=",
+            "precedence": 8
+        },
+        {
+            "name": "^=",
+            "precedence": 8
+        },
+        {
+            "name": "&&",
+            "precedence": 9
+        },
+        {
+            "name": "||",
+            "precedence": 9
+        },
+        {
+            "name": "?",
+            "precedence": 10
+        },
+        {
+            "name": "delete",
+            "precedence": 10
+        },
+        {
+            "name": "in",
+            "precedence": 10
+        },
+        {
+            "name": "instanceof",
+            "precedence": 10
+        },
+        {
+            "name": "new",
+            "precedence": 10
+        },
+        {
+            "name": "return",
+            "precedence": 10
+        },
+        {
+            "name": "typeof",
+            "precedence": 10
+        },
+        {
+            "name": "void",
+            "precedence": 10
+        },
+        {
+            "name": "yield",
+            "precedence": 10
+        }
+    ],
+    "shebang": {
+        "lineNumber": 1,
+        "columnNumber": 0,
+        "value": "#!/usr/bin/env node"
+    }
+}

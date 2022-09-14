@@ -9,6 +9,6 @@ export declare function isOperator(c: string): boolean;
 export declare function isDelimiter(c: string): boolean;
 export declare function isEOF(c: string): boolean;
 
-export  declare interface Statement {
+export declare interface ILexer { 
     
 }

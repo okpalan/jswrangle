@@ -1,6 +1,5 @@
-// treat as a module(node as a script)
+// treat as a module(not as a script)
 export { };
-export as namespace Tokenizer;
 export declare type TokenList = TokenType[];
 
 // All the Valid types of token
@@ -13,6 +12,7 @@ export declare enum TokenType {
     EOL = 'EOL',
     EOF = 'EOF'
 }
+
 export declare enum TokenKeyword {
     // Reserved Keywords
     BREAK = 'break',
@@ -197,4 +197,3 @@ export interface Checker {
     isTokenEOF(token: IToken): token is ITokenEOF;
 }
 
-var checker: Checker;

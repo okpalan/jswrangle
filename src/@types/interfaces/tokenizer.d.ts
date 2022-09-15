@@ -2,10 +2,13 @@
 export { }
 export as namespace Tokenizer;
 
-// For/From 'TypeOfToken' enum
-export declare function isKeyword(c: string): boolean;
-export declare function isIdentifier(c: string): boolean;
-export declare function isOperator(c: string): boolean;
-export declare function isDelimiter(c: string): boolean;
-export declare function isEOL(c: string): boolean;
-export declare function isEOF(c: string): boolean;
+// // For/From 'TypeOfToken' enum
+// export declare function isKeyword(c: string): boolean;
+// export declare function isIdentifier(c: string): boolean;
+// export declare function isOperator(c: string): boolean;
+// export declare function isDelimiter(c: string): boolean;
+// export declare function isBang(c: string): boolean;
+// export declare function isEOL(c: string): boolean;
+// export declare function isEOF(c: string): boolean;
+
+export declare type Constructor<T> = new (...args: any[]) => T;

@@ -1,5 +1,6 @@
 // treat as a module(not as a script)
 export { };
+export as namespace Token;
 export declare type TokenList = TokenType[];
 
 // All the Valid types of token

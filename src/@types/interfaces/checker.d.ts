@@ -3,6 +3,7 @@ export {};
 /// write a checker interface and types using ./parser.d.ts and ./tokenizer.d.ts.
 
 export declare interface IChecker {
-    isTokenBang(token:IToken): token is IBangToken,    
-    isTokenKeyword(token:IToken): token is IKeywordToken,
+    isTokenBang(token:Token.IToken): token is Token.ITokenBang,    
+    isTokenKeyword(token:Token.IToken): token is Token.ITokenKeyword,
+    isTokenDelimiter(token:Token.IToken)
 }

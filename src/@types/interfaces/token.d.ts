@@ -90,7 +90,7 @@ export declare enum TokenEnd {
     EOF = 'EOF'
 }
 
-export declare enum TokenControlChar {
+export declare enum TokenControlCharacter {
     TAB = '\t',
     NEWLINE = '\n',
     CARRIAGE_RETURN = '\r',
@@ -104,13 +104,23 @@ export declare enum TokenBinaryOperator {
     U_RSHIFT = '>>>',
 }
 
-export declare enum TokenExtra {
-    SHEBANG = '#!',
+export declare enum TokenComment {
     COMMENT = '//',
     COMMENT_START = '/*',
     COMMENT_END = '*/',
 }
-//interfaces to check 
+export declare enum TokenBang {
+    SHEBANG = '#!',
+    HEBANG = '#',
+}
+export declare enum TokenString {
+    SINGLE_QUOTE = '\'',
+    DOUBLE_QUOTE = '"',
+    BACK_TICK = '`',
+}
+
+//interfaces to check enumcast.
+
 export declare interface IToken {
     type: TokenType;
     value: string;
@@ -136,6 +146,11 @@ export declare interface ITokenOperator extends IToken {
 export declare interface ITokenDelimiter extends IToken {
     type: TokenType.Delimiter;
     value: TokenDelimiter;
+}
+
+export declare interface ITokenEnd extends IToken {
+    type: TokenType.EOF | TokenType.EOL,
+    value: TokenEnd
 }
 
 export declare interface ITokenEOL extends IToken {

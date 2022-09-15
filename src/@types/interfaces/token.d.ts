@@ -2,8 +2,15 @@
 export { };
 export as namespace Token;
 export declare type TokenList = TokenType[];
-
-
+// All the Valid types of token
+export declare enum TokenType {
+    Keyword = 'Keyword',
+    Delimiter = 'Delimiter',
+    Operator = 'Operator',
+    Identifier = 'Identifier',
+    EOL = 'EOL',
+    EOF = 'EOF'
+}
 export declare enum TokenKeyword {
     // Reserved Keywords
     BREAK = 'break',
@@ -103,15 +110,7 @@ export declare enum TokenExtra {
     COMMENT_START = '/*',
     COMMENT_END = '*/',
 }
-
-export declare enum TokenType {
-    Keyword = 'Keyword',
-    Delimiter = 'Delimiter',
-    Operator = 'Operator',
-    Identifier = 'Identifier',
-    EOL = 'EOL',
-    EOF = 'EOF'
-}
+//interfaces to check 
 export declare interface IToken {
     type: TokenType;
     value: string;

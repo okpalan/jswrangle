@@ -148,12 +148,6 @@ export declare interface ITokenEOF extends IToken {
     value: TokenEnd.EOF;
 }
 
-
-
-
-
-
-
 export declare interface ITokenIterable {
     [Symbol.iterator](): ITokenIterator;
     [index: number]: TokenType;

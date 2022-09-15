@@ -9,3 +9,4 @@ export declare interface IChecker {
     isTokenOperator(token: Token.IToken): token is Token.ITokenOperator,
     isTokenEnd(token: Token.IToken): token is Token.ITokenEnd,
 }
+

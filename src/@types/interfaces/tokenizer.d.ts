@@ -2,15 +2,16 @@
 export { };
 export as namespace Tokenizer;
 export declare type TokenList = TokenType[];
+
 // All the Valid types of token
 export declare enum TokenType {
-    Bang,
-    Keyword,
-    Delimiter,
-    Operator,
-    Identifier,
-    EOL,
-    EOF
+    Bang = 'Bang',
+    Keyword = 'Keyword',
+    Delimiter = 'Delimiter',
+    Operator = 'Operator',
+    Identifier = 'Identifier',
+    EOL = 'EOL',
+    EOF = 'EOF'
 }
 export declare enum TokenKeyword {
     // Reserved Keywords
@@ -87,6 +88,10 @@ export declare enum TokenDelimiter {
     DOT = '.'
 }
 export declare type TokenIdentifier = string;
+export declare interface ITokenEnd extends IToken {
+    type: TokenType.EOL | TokenType.EOF,
+    value: TokenType.EOF | TokenType.EOL
+}
 
 export declare enum TokenEnd {
     EOL = 'EOL',
@@ -156,10 +161,7 @@ export declare interface ITokenDelimiter extends IToken {
     value: TokenDelimiter;
 }
 
-export declare interface ITokenEnd extends IToken {
-    type: TokenType.EOF | TokenType.EOL,
-    value: TokenEnd
-}
+
 
 export declare interface ITokenEOL extends IToken {
     type: TokenType.EOL;
@@ -185,14 +187,4 @@ export declare interface ITokenResult {
     done: boolean;
 }
 
-// interface for a TokenizerChecker class
-export declare interface IChecker {
-    isTokenKeyword(c: string): boolean;
-    isTokenIdentifier(c: string): boolean;
-    isTokenOperator(c: string): boolean;
-    isTokenDelimiter(c: string): boolean;
-    isTokenBang(c: string): boolean;
-    isTokenEnd(char: string): boolean;
-}
 
-export var TokenChecker: IChecker;

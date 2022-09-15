@@ -5,5 +5,5 @@ export {};
 export declare interface IChecker {
     isTokenBang(token:Token.IToken): token is Token.ITokenBang,    
     isTokenKeyword(token:Token.IToken): token is Token.ITokenKeyword,
-    isTokenDelimiter(token:Token.IToken)
+    isTokenDelimiter(token:Token.IToken): token
 }

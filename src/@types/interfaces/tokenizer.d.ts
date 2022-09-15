@@ -2,13 +2,16 @@
 export { }
 export as namespace Tokenizer;
 
-// // For/From 'TypeOfToken' enum
-// export declare function isKeyword(c: string): boolean;
-// export declare function isIdentifier(c: string): boolean;
-// export declare function isOperator(c: string): boolean;
-// export declare function isDelimiter(c: string): boolean;
-// export declare function isBang(c: string): boolean;
-// export declare function isEOL(c: string): boolean;
-// export declare function isEOF(c: string): boolean;
-
 export declare type Constructor<T> = new (...args: any[]) => T;
+
+//  an interface for a TokenizerChecker class
+export declare interface Checker {
+    isKeyword(c: string): boolean;
+    isIdentifier(c: string): boolean;
+    isOperator(c: string): boolean;
+    isDelimiter(c: string): boolean;
+    isBang(c: string): boolean;
+    isEOL(c: string): boolean;
+    isEOF(c: string): boolean;
+}
+

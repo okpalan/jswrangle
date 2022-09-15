@@ -1,5 +1,13 @@
 /// <reference path="../@types/interfaces/tokenizer.d.ts"/>
-
+enum TokenType {
+    Bang = 'Bang',
+    Keyword = 'Keyword',
+    Delimiter = 'Delimiter',
+    Operator = 'Operator',
+    Identifier = 'Identifier',
+    EOL = 'EOL',
+    EOF = 'EOF'
+}
 var checker: Tokenizer.Checker = {
     isTokenBang(token: Tokenizer.IToken): token is Tokenizer.ITokenBang {
         return token.type === Tokenizer.TokenType.Bang;

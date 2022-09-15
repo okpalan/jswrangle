@@ -1,3 +1,14 @@
+var TokenType;
+(function (TokenType) {
+    TokenType["Bang"] = "Bang";
+    TokenType["Keyword"] = "Keyword";
+    TokenType["Delimiter"] = "Delimiter";
+    TokenType["Operator"] = "Operator";
+    TokenType["Identifier"] = "Identifier";
+    TokenType["EOL"] = "EOL";
+    TokenType["EOF"] = "EOF";
+})(TokenType || (TokenType = {}));
+
 var checker = {
     isTokenBang: function (token) {
         return token.type === Tokenizer.TokenType.Bang;

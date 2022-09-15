@@ -6,11 +6,10 @@
         "lib": ["es2015"],
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
-        
-        "typeRoots": ["src/@types", "node_modules/@types"],
+        "typeRoots": ["src/@types/**/*", "src/@types/*", "node_modules/@types"],
         "baseUrl": "src",
         "paths": {
-            "*": ["*"] // this is the important part
+            "*": ["*",] // this is the important part
         },
         "outDir": "dist",
         "experimentalDecorators": true,

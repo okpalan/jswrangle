@@ -1,49 +1,46 @@
 // treat as a module(node as a script)
 export { };
 export as namespace Token;
-
-//declare Token type
-declare type TokenType = {
-    type: string;
-    value: string;
-    line: number;
-    col: number;
-};
-
 export declare type TokenList = TokenType[];
+
+
 export declare enum TokenKeyword {
-    VAR = 'var',
-    LET = 'let',
-    CONST = 'const',
-    FUNCTION = 'function',
-    TRUE = 'true',
-    FALSE = 'false',
-    IF = 'if',
-    ELSE = 'else',
-    RETURN = 'return',
+    // Reserved Keywords
     BREAK = 'break',
     CASE = 'case',
     CATCH = 'catch',
+    CLASS = 'class',
+    CONST = 'const',
     CONTINUE = 'continue',
     DEBUGGER = 'debugger',
+    DEFAULT = 'default',
     DELETE = 'delete',
     DO = 'do',
-    TRY = 'try',
+    ELSE = 'else',
+    EXPORT = 'export',
+    EXTENDS = 'extends',
     FINALLY = 'finally',
+    FOR = 'for',
+    FUNCTION = 'function',
+    IF = 'if',
+    IMPORT = 'import',
     IN = 'in',
-    OF = 'of',
     INSTANCEOF = 'instanceof',
     NEW = 'new',
+    RETURN = 'return',
+    SUPER = 'super',
+    SWITCH = 'switch',
     THIS = 'this',
+    THROW = 'throw',
+    TRY = 'try',
+    TYPEOF = 'typeof',
+    VAR = 'var',
+    VOID = 'void',
     WHILE = 'while',
     WITH = 'with',
-    ASYNC = 'async',
-    AWAIT = 'await',
-    YIELD = 'yield',
-    YIELD_STAR = 'yield*',
-    GENERATOR_FUNCTION = 'function*',
+    // Strict Mode
+    STRICT_MODE = 'use strict'
 }
-
 export declare enum TokenOperator {
     PLUS = '+',
     MINUS = '-',
@@ -64,6 +61,8 @@ export declare enum TokenOperator {
     DEEP_STRICT_EQUAL = '===',
     NOT_EQUAL = '!==',
     MODULO_EQUAL = '%=',
+}
+export declare enum TokenUnaryOperator {
     INCREMENT = '++',
     DECREMENT = '--',
 }
@@ -80,7 +79,7 @@ export declare enum TokenDelimiter {
     DOT = '.'
 }
 export declare enum TokenEnd {
-    EOL='EOL',
+    EOL = 'EOL',
     EOF = 'EOF'
 }
 
@@ -105,13 +104,55 @@ export declare enum TokenExtra {
     COMMENT_END = '*/',
 }
 
-export declare enum TypeOfToken {
-    Keyword = 'TokenKeyword',
-    Identifier = 'TokenIdentifier',
-    Operator = 'TokenOperator',
-    Delimiter = 'TokenDelimiter',
-    EOF = 'TokenEOF'
+export declare enum TokenType {
+    Keyword = 'Keyword',
+    Delimiter = 'Delimiter',
+    Operator = 'Operator',
+    Identifier = 'Identifier',
+    EOL = 'EOL',
+    EOF = 'EOF'
 }
+export declare interface IToken {
+    type: TokenType;
+    value: string;
+    line: number;
+    column: number;
+}
+
+export declare interface ITokenKeyword extends IToken {
+    type: TokenType.Keyword;
+    value: TokenKeyword;
+}
+
+export declare interface ITokenIdentifier extends IToken {
+    type: TokenType.Identifier;
+    value: string;
+}
+
+export declare interface ITokenOperator extends IToken {
+    type: TokenType.Operator;
+    value: TokenBinaryOperator | TokenOperator | TokenUnaryOperator;
+}
+
+export declare interface ITokenDelimiter extends IToken {
+    type: TokenType.Delimiter;
+    value: TokenDelimiter;
+}
+
+export declare interface ITokenEOL extends IToken {
+    type: TokenType.EOL;
+    value: TokenEnd.EOL;
+}
+
+export declare interface ITokenEOF extends IToken {
+    type: TokenType.EOF;
+    value: TokenEnd.EOF;
+}
+
+
+
+
+
 
 
 export declare interface ITokenIterable {

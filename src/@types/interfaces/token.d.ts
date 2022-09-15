@@ -8,6 +8,7 @@ export declare enum TokenType {
     Delimiter = 'Delimiter',
     Operator = 'Operator',
     Identifier = 'Identifier',
+    Bang = 'Bang',
     EOL = 'EOL',
     EOF = 'EOF'
 }
@@ -109,10 +110,11 @@ export declare enum TokenComment {
     COMMENT_START = '/*',
     COMMENT_END = '*/',
 }
+
 export declare enum TokenBang {
     SHEBANG = '#!',
-    HEBANG = '#',
 }
+
 export declare enum TokenString {
     SINGLE_QUOTE = '\'',
     DOUBLE_QUOTE = '"',
@@ -126,6 +128,10 @@ export declare interface IToken {
     value: string;
     line: number;
     column: number;
+}
+export declare interface ITokenBang extends IToken {
+    type: TokenType.Bang
+    value: TokenBang
 }
 
 export declare interface ITokenKeyword extends IToken {

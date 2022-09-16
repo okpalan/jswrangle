@@ -1,4 +1,5 @@
 /// <reference path="../@types/interfaces/lib.d.ts"/>
+import Token from "../@types/interfaces/tokenizer";
 
 var Checker: IChecker = {
     isTokenBang: function (token: Token.IToken): token is Token.ITokenBang {
@@ -23,7 +24,7 @@ var Checker: IChecker = {
         return token.type === Token.TokenType.EOF;
     }
 }
-// build a Lexer Iterator function constructor using generator function.
+
 function* Lexer(source: string) {
     this.source = source;
     this.index = 0;
@@ -47,3 +48,6 @@ function* Lexer(source: string) {
         return null;
     }
 }
+
+export default Lexer;
+

@@ -188,13 +188,4 @@ export declare interface ITokenResult {
     done: boolean;
 }
 
-export interface Checker {
-    isTokenBang(token: IToken): token is ITokenBang,
-    isTokenKeyword(token: IToken): token is ITokenKeyword;
-    isTokenIdentifier(token: IToken): token is ITokenIdentifier;
-    isTokenOperator(token: IToken): token is ITokenOperator;
-    isTokenDelimiter(token: IToken): token is ITokenDelimiter;
-    isTokenEOL(token: IToken): token is ITokenEOL;
-    isTokenEOF(token: IToken): token is ITokenEOF;
-}
 

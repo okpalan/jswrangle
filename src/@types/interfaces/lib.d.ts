@@ -1,5 +1,7 @@
-/// <reference path="./parser.d.ts"/>
-/// <reference path="./checker.d.ts"/>
+/// <reference path="./lexer.d.ts"/>
+/// <reference path="./lexer.d.ts"/>
+/// <reference path="./tokenizer.d.ts"/>
+
 
 export { };
 export as namespace JSWrangler;

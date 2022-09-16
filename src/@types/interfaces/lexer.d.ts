@@ -1,7 +1,9 @@
-/// <reference path="./tokenizer.d.ts"/>
+import Token from "./tokenizer";
+
 export { };
-export as namespace Checker;
-export declare interface IChecker {
+export as namespace Lexer;
+
+export declare type IChecker = {
     isTokenBang(token: Token.IToken): token is Token.ITokenBang,
     isTokenKeyword(token: Token.IToken): token is Token.ITokenKeyword,
     isTokenDelimiter(token: Token.IToken): token is Token.ITokenDelimiter,

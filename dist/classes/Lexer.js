@@ -22,3 +22,27 @@ var Checker = {
         return token.type === Token.TokenType.EOF;
     }
 };
+// build a Lexer Iterator function constructor using generator function.
+function* Lexer(source) {
+    this.source = source;
+    this.index = 0;
+    this.line = 1;
+    this.column = 1;
+    this.length = source.length;
+    this.current = null;
+    this.next = function () {
+        if (this.index < this.length) {
+            this.current = this.source[this.index];
+            this.index++;
+            this.column++;
+            return this.current;
+        }
+        return null;
+    };
+    this.peek = function () {
+        if (this.index < this.length) {
+            return this.source[this.index];
+        }
+        return null;
+    };
+}

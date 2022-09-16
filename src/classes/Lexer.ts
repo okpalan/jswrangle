@@ -1,6 +1,5 @@
 /// <reference path="../@types/interfaces/lib.d.ts"/>
 
-
 var Checker: IChecker = {
     isTokenBang: function (token: Token.IToken): token is Token.ITokenBang {
         return token.type === Token.TokenType.Bang;
@@ -22,5 +21,29 @@ var Checker: IChecker = {
     },
     isTokenEOF: function (token: Token.IToken): token is Token.ITokenEOF {
         return token.type === Token.TokenType.EOF;
+    }
+}
+// build a Lexer Iterator function constructor using generator function.
+function* Lexer(source: string) {
+    this.source = source;
+    this.index = 0;
+    this.line = 1;
+    this.column = 1;
+    this.length = source.length;
+    this.current = null;
+    this.next = function () {
+        if (this.index < this.length) {
+            this.current = this.source[this.index];
+            this.index++;
+            this.column++;
+            return this.current;
+        }
+        return null;
+    }
+    this.peek = function () {
+        if (this.index < this.length) {
+            return this.source[this.index];
+        }
+        return null;
     }
 }

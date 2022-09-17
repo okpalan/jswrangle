@@ -14,6 +14,11 @@ export declare enum TokenType {
     EOF = 'EOF'
 }
 
+
+export declare interface ITokenConstructor {
+    new(source: string): IToken;
+    prototype: IToken;
+}
 export declare enum TokenKeyword {
     // Reserved Keywords
     BREAK = 'break',
@@ -88,7 +93,10 @@ export declare enum TokenDelimiter {
     RBRACKET = ']',
     DOT = '.'
 }
-export declare type TokenIdentifier = string;
+export declare interface ITokenIdentifier {
+    type: TokenType.Identifier,
+    value: string
+}
 export declare interface ITokenEnd extends IToken {
     type: TokenType.EOL | TokenType.EOF,
     value: TokenType.EOF | TokenType.EOL

@@ -4,6 +4,7 @@ export { };
 export as namespace Lexer;
 
 export declare type IChecker = {
+    isTokenIdentifier(token: string): token is Token.ITokenIdentifier;
     isTokenBang(token: Token.IToken): token is Token.ITokenBang,
     isTokenKeyword(token: Token.IToken): token is Token.ITokenKeyword,
     isTokenDelimiter(token: Token.IToken): token is Token.ITokenDelimiter,

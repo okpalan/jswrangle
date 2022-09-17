@@ -1,4 +1,3 @@
-/// <reference path="../@types/interfaces/lib.d.ts"/>
 import Token from "../@types/interfaces/tokenizer";
 import createToken from "../modules/createToken";
 import { checker } from "../modules/checkToken";

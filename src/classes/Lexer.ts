@@ -1,4 +1,5 @@
 /// <reference path="../@types/interfaces/lib.d.ts"/>
+import { IChecker } from "../@types/interfaces/lexer";
 import Token from "../@types/interfaces/tokenizer";
 
 var Checker: IChecker = {
@@ -25,29 +26,35 @@ var Checker: IChecker = {
     }
 }
 
-function* Lexer(source: string) {
-    this.source = source;
-    this.index = 0;
-    this.line = 1;
-    this.column = 1;
-    this.length = source.length;
-    this.current = null;
-    this.next = function () {
+
+class Lexer {
+    private source: string;
+    public index: number;
+    public line: number;
+    public column: number;
+    public length: number;
+    public current: any;
+    constructor( source: string) {
+        this.source = source;
+        this.index = 0;
+        this.line = 1;
+        this.column = 1;
+        this.length = source.length;
+        this.current = null;
+        return null;
+    }
+    public next() {
         if (this.index < this.length) {
             this.current = this.source[this.index];
             this.index++;
             this.column++;
             return this.current;
         }
-        return null;
     }
-    this.peek = function () {
+    peek() {
         if (this.index < this.length) {
             return this.source[this.index];
         }
         return null;
     }
 }
-
-export default Lexer;
-

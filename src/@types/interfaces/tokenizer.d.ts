@@ -197,3 +197,9 @@ export declare interface ITokenResult {
 }
 
 
+export declare function makeToken({
+    type: TokenType,
+    value: string,
+    // line: number,
+    // column: number
+}): IToken;

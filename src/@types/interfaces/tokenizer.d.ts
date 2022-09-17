@@ -145,6 +145,7 @@ export declare interface IToken {
     line: number;
     column: number;
 }
+
 export declare interface ITokenBang extends IToken {
     type: TokenType.Bang
     value: TokenBang

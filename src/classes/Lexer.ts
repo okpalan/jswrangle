@@ -1,10 +1,8 @@
 /// <reference path="../@types/interfaces/lib.d.ts"/>
 import Token, { makeToken } from "../@types/interfaces/tokenizer";
 import createToken from "../modules/createToken";
-
-
-
-function* Lexer(source: string) {
+import { checker } from "../modules/checker";
+function* Lexer(source: string): IterableIterator<Token.IToken> {
     for (const token of source) {
         if (checker.isTokenEOL(token)) {
             yield createToken(
@@ -58,4 +56,5 @@ function* Lexer(source: string) {
         }
     }
 }
+
 export = Lexer;

@@ -26,15 +26,13 @@ var Checker: IChecker = {
     }
 }
 
-
 class Lexer {
-    private source: string;
     public index: number;
     public line: number;
     public column: number;
     public length: number;
     public current: any;
-    constructor( source: string) {
+    constructor(public source: string) {
         this.source = source;
         this.index = 0;
         this.line = 1;
@@ -57,4 +55,5 @@ class Lexer {
         }
         return null;
     }
+    checker: IChecker = Checker;
 }

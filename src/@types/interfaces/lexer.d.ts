@@ -13,4 +13,18 @@ export declare type IChecker = {
     isTokenEOF(token: Token.IToken): token is Token.ITokenEOF;
 }
 
+export declare interface ILexer {
+    index: number;
+    line: number;
+    column: number;
+    length: number;
+    current: any;
+    next(): any;
+    peek(): any;
+}
 
+export declare interface ILexerConstructor {
+    new(source: string): ILexer;
+    prototype: ILexer;
+    checker: IChecker;
+}

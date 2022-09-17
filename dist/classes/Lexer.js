@@ -25,6 +25,8 @@ var Checker = {
 class Lexer {
     constructor(source) {
         this.source = source;
+        this.checker = Checker;
+        this.source = source;
         this.index = 0;
         this.line = 1;
         this.column = 1;

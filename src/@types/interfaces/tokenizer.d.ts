@@ -93,7 +93,7 @@ export declare enum TokenDelimiter {
     RBRACKET = ']',
     DOT = '.'
 }
-export declare interface ITokenIdentifier {
+export declare interface ITokenIdentifier extends IToken {
     type: TokenType.Identifier,
     value: string
 }

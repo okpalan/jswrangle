@@ -6,6 +6,4 @@ function createToken(type, value, line, column) {
         column: column
     };
 }
-
-export = createToken;
-
+export {};

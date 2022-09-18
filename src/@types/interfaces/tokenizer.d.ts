@@ -1,6 +1,6 @@
 // treat as a module(not as a script)
 export { };
-export as namespace Token;
+export as namespace Tokenizer;
 export declare type TokenList = TokenType[];
 
 // All the Valid types of token
@@ -192,9 +192,10 @@ export declare interface ITokenIterator {
     next(): ITokenResult;
 }
 
-export declare interface ITokenResult {
+export declare interface ITokenResult extends IToken {
     value: TokenType;
     done: boolean;
 }
 
-
+export declare type TokenConstructor<T = IToken> = (token: string) => T;
+export declare function createToken<T = TokenConstructor>(token: string): T

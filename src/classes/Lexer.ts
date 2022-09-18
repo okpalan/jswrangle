@@ -1,54 +1,55 @@
-import Token from "../@types/interfaces/tokenizer";
+import Tokenizer from "../@types/interfaces/tokenizer";
 import createToken from "../modules/createToken";
 import { checker } from "../modules/checkToken";
+import Token from "./Token";
 
-function* Lexer(source: string): IterableIterator<Token.IToken> {
+function* Lexer(source: string): Generator<Tokenizer.IToken, void, void> {
     for (const token of source) {
         if (checker.isTokenEOL(token)) {
-            yield createToken(
-                Token.TokenType.EOL,
-                Token.TokenEnd.EOL,
+            yield new Token(
+                Tokenizer.TokenType.EOL,
+                Tokenizer.TokenEnd.EOL,
                 token.line,
                 token.column
             );
         } else if (checker.isTokenEOF(token)) {
-            yield createToken(
-                Token.TokenType.EOF,
-                Token.TokenEnd.EOF,
+            yield new Token(
+                Tokenizer.TokenType.EOF,
+                Tokenizer.TokenEnd.EOF,
                 token.line,
                 token.column
             );
         } else if (checker.isTokenBang(token)) {
-            yield createToken(
-                Token.TokenType.Bang,
-                Token.TokenBang.SHEBANG,
+            yield new Token(
+                Tokenizer.TokenType.Bang,
+                Tokenizer.TokenBang.SHEBANG,
                 token.line,
                 token.column
             );
         } else if (checker.isTokenKeyword(token)) {
-            yield createToken(
-                Token.TokenType.Keyword,
+            yield new Token(
+                Tokenizer.TokenType.Keyword,
                 token.value,
                 token.line,
                 token.column
             );
         } else if (checker.isTokenDelimiter(token)) {
             yield createToken(
-                Token.TokenType.Delimiter,
+                Tokenizer.TokenType.Delimiter,
                 token.value,
                 token.line,
                 token.column
             );
         } else if (checker.isTokenOperator(token)) {
-            yield createToken(
-                Token.TokenType.Operator,
+            yield new Token(
+                Tokenizer.TokenType.Operator,
                 token.value,
                 token.line,
                 token.column
             );
         } else if (checker.isTokenIdentifier(token)) {
-            yield createToken(
-                Token.TokenType.Identifier,
+            yield new Token(
+                Tokenizer.TokenType.Identifier,
                 token.value,
                 token.line,
                 token.column
@@ -57,4 +58,4 @@ function* Lexer(source: string): IterableIterator<Token.IToken> {
     }
 }
 
-export = Lexer;
+export default Lexer;

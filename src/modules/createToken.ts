@@ -1,9 +1,4 @@
 function createToken(type, value, line, column) {
-    return {
-        type: type,
-        value: value,
-        line: line,
-        column: column
-    };
+    return new Token(type, value, line, column);
 }
 export = createToken;

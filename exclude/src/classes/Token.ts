@@ -13,7 +13,7 @@ class Token implements Token.IToken {
     static isTokenType(token: Token.IToken, type) {
         return token.type === type;
     }
-    static function create(type, value, line, column) {
+    static create(type, value, line, column) {
         return new Token(type, value, line, column);
     }
 }

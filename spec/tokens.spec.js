@@ -1,8 +1,6 @@
 const createToken = require('../dist/modules/tokens');
 const {assert} = require('chai');
 
-
-
 describe("createToken", () => {
     it("should return an Token.ITokenEnd", () => {
         const token = createToken(

@@ -1,4 +1,7 @@
 {
+    "files": [
+        "src/@types/index.d.ts"
+    ],
     "compilerOptions": {
         // "module": "Node16",
         "target": "Es2020",

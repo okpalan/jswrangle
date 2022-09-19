@@ -19,6 +19,7 @@ export declare interface ITokenConstructor {
     new(source: string): IToken;
     prototype: IToken;
 }
+
 export declare enum TokenKeyword {
     // Reserved Keywords
     BREAK = 'break',

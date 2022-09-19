@@ -3,7 +3,7 @@ import createToken from "../modules/createToken";
 import { checker } from "../modules/checkToken";
 import Token from "./Token";
 
-function* Lexer(source: string): Generator<Tokenizer.IToken, void, void> {
+function* Lexer(source: string): Generator<Tokenizer.IToken> {
     for (const token of source) {
         if (checker.isTokenEOL(token)) {
             yield new Token(

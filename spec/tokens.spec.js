@@ -1,9 +1,6 @@
-const mocha = require('mocha');
+const createToken = require('../dist/modules/tokens');
 const {assert} = require('chai');
-const {Lexer} = require('../../src/lexer');
-import { createToken } from "../modules/tokenizer";
-import fs from  "fs";
-import path from "path";
+
 
 
 describe("createToken", () => {

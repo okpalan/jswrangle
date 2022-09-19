@@ -2,9 +2,12 @@
   "name": "jshrink",
   "version": "0.1.0",
   "description": "A JavaScript Minifer and Obfuscator",
-  "main": "dist/jshrink.js",
+  "main": "dist/jswrangle.js",
+  "directories": {
+    "test": "spec"
+  },
   "scripts": {
-    "test": "mocha",
+    "test": "mocha **/*.spec.js",
     "build": "tsc -p .",
     "build:watch": "tsc -p . -w"
   },

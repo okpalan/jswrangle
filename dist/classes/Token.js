@@ -5,35 +5,12 @@ class Token {
         this.line = line;
         this.column = column;
     }
-}
-Token.Checker;
-Token.IChecker = {
-    isTokenIdentifier(token) {
-        return token.type === Token.TokenType.Identifier;
-    },
-    isTokenBang(token) {
-        return token.type === Token.TokenType.Bang;
-    },
-    isTokenKeyword(token) {
-        return token.type === Token.TokenType.Keyword;
-    },
-    isTokenDelimiter(token) {
-        return token.type === Token.TokenType.Delimiter;
-    },
-    isTokenOperator(token) {
-        return token.type === Token.TokenType.Operator;
-    },
-    isTokenEnd(token) {
-        return token.type === Token.TokenType.EOF || token.type === Token.TokenType.EOL;
-    },
-    isTokenEOL(token) {
-        return token.type === Token.TokenType.EOL;
-    },
-    isTokenEOF(token) {
-        return token.type === Token.TokenType.EOF;
+    static isTokenType(token, type) {
+        return token.type === type;
     }
-};
-function createToken(type, value, line, column) {
-    return new Token(type, value, line, column);
+    create(type, value, line, column) {
+        return new Token(type, value, line, column);
+    }
 }
-export { Token as default, createToken };
+// write a function to check a token types.
+export default Token;

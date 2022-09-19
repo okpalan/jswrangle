@@ -1,10 +1,8 @@
 import Tokenizer from "../@types/interfaces/tokenizer";
-import createToken from "../modules/createToken";
-import { checker } from "../modules/checkToken";
 import Token from "./Token";
 function* Lexer(source) {
     for (const token of source) {
-        if (checker.isTokenEOL(token)) {
+        if (Token.checker.isTokenEOL(token)) {
             yield new Token(Tokenizer.TokenType.EOL, Tokenizer.TokenEnd.EOL, token.line, token.column);
         }
         else if (checker.isTokenEOF(token)) {
